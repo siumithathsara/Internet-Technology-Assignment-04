@@ -1,0 +1,64 @@
+/* :root {
+    --side-width: 50vw;
+    --side-height: 50vh; */
+
+body{
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    position: absolute;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;}
+main {
+    display: flex;
+    width: fit-content;
+    height: fit-content;
+    animation-name: slide;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+
+}
+
+img {
+    width:100vw;
+    height: 100vh;
+}
+
+.img-01{
+    background-size: cover;
+    background-position: center;
+}
+.img-02{
+    background-size: cover;
+    background-position: center;
+}
+.img-03{
+    background-size: cover;
+    background-position: center;
+}
+.img-04{
+    background-size: cover;
+    background-position: center;
+}
+
+@keyframes slide {
+    0%,20% {
+        transform: translateX(0%);
+    }
+    25%,45% {
+        transform: translateX(-25%);
+
+    }
+    50%,70% {
+        transform: translateX(-50%);
+
+    }
+    75%,100% {
+        transform: translateX(-75%);
+    }
+}
