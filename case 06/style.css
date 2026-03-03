@@ -1,0 +1,93 @@
+body {
+    height: 100vh;
+    width: 100vw;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow-x: hidden;
+
+}
+          
+.road {
+    height: 200px;
+    width: 400vw;
+    background-repeat: repeat-x;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    animation: road_animation 2s linear infinite;
+}
+
+
+@keyframes road_animation {
+
+    100% {
+        transform: translateX(-500px);
+    }
+}
+
+.car {
+    height: 250px;
+    width: 400vw;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 200px;
+    background-repeat: repeat-x;
+    animation: car_animation 5s linear infinite;
+
+}
+
+@keyframes car_animation {
+
+    100% {
+        transform: translateX(-500px);
+    }
+}
+
+.wheel {
+    width: 400px;
+    left: 50%;
+    bottom: 100px;
+    transform: translateX(-50%);
+    position: absolute;
+
+}
+
+.font-wheel {
+    width: 100%;
+
+}
+.back-wheel {
+    width: 100%;
+
+}
+
+.sky{
+    left: 50%;
+    bottom: 184px;
+    transform: translateX(-50%);
+    position: absolute;
+
+}
+
+.wheel{
+    width: 75px;
+    height: 75px;
+    animation: tire_animation 1s linear infinite;
+
+}
+.font-wheel{
+    left: -167px;
+    position: absolute;
+}.back-wheel{
+     right: -154px;
+     position: absolute;
+ }
+
+@keyframes tire_animation {
+    100%{
+        transform: rotate(360deg);
+       }
+}
