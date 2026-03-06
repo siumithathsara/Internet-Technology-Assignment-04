@@ -1,93 +1,98 @@
-body {
-    height: 100vh;
-    width: 100vw;
-    background-size: cover;
-    background-position: center;
-    position: relative;
-    overflow-x: hidden;
-
-}
-          
-.road {
-    height: 200px;
-    width: 400vw;
-    background-repeat: repeat-x;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    animation: road_animation 2s linear infinite;
+* {
+  margin: 0;
+  padding: 0;
 }
 
+.city-container {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  position: fixed;
+}
 
-@keyframes road_animation {
+.city-container > img {
+  width: 100vw;
+  height: 75vh;
+  object-fit: cover;
+  position: relative;
+}
 
-    100% {
-        transform: translateX(-500px);
-    }
+.city-view {
+  display: flex;
+  width: 300vw;
+  align-items: flex-end;
+}
+
+.city {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation: go-back 8s ease-in-out 1s infinite;
+}
+
+#frame-02 {
+  left: 100vw;
+}
+
+#frame-03 {
+  left: 200vw;
+}
+
+.city > img {
+  width: 100vw;
+  height: 25vh;
 }
 
 .car {
-    height: 250px;
-    width: 400vw;
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 200px;
-    background-repeat: repeat-x;
-    animation: car_animation 5s linear infinite;
-
+  width: 20vw;
+  position: absolute;
+  top: 75%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
-@keyframes car_animation {
-
-    100% {
-        transform: translateX(-500px);
-    }
+.car > img {
+  width: 100%;
 }
 
-.wheel {
-    width: 400px;
-    left: 50%;
-    bottom: 100px;
-    transform: translateX(-50%);
-    position: absolute;
-
+.wheel > img {
+  width: 4vw;
+  position: absolute;
+  animation: wheel-rotation 8s ease-in-out infinite;
+  animation-delay: 1s;
 }
 
-.font-wheel {
-    width: 100%;
-
-}
-.back-wheel {
-    width: 100%;
-
+img[alt="wheel-1"] {
+  top: 50%;
+  left: 8%;
 }
 
-.sky{
-    left: 50%;
-    bottom: 184px;
-    transform: translateX(-50%);
-    position: absolute;
-
+img[alt="wheel-2"] {
+  top: 50%;
+  left: 70%;
 }
 
-.wheel{
-    width: 75px;
-    height: 75px;
-    animation: tire_animation 1s linear infinite;
-
+@keyframes go-back {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-200vw);
+  }
 }
-.font-wheel{
-    left: -167px;
-    position: absolute;
-}.back-wheel{
-     right: -154px;
-     position: absolute;
- }
-
-@keyframes tire_animation {
-    100%{
-        transform: rotate(360deg);
-       }
+@keyframes wheel-rotation {
+  0% {
+    transform: rotate(0);
+  }
+  50% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(0);
+  }
 }

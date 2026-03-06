@@ -1,27 +1,28 @@
-body{
-    height: 100vh;
-    position: relative;
-}
-.drop{
-    width: 100px;
-    aspect-ratio: 1/1;
-    border-radius: 100%;
-    border: 4px solid red;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
-    animation: water-animation 1s infinite linear;
+* {
+  margin: 0;
 }
 
-@keyframes water-animation {
-    from{
-        width: 20px;
-    }
-    to{
-        width: 200px;
-        opacity: 0;
-    }
+.container {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.circle {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  animation: water-drop 1.5s ease-in-out infinite;
+}
+
+@keyframes water-drop {
+  from {
+    transform: scale(0);
+    border: 2px solid red;
+  }
+  to {
+    transform: scale(3);
+    border: 2px solid white;
+  }
 }

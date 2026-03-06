@@ -1,51 +1,42 @@
-:root {
-    --box-width: 200px;
-    --box-height: 100px;
+body {
+    height: 100vh;
+    width: 100vw;
+    box-sizing: border-box;
 }
-body{
-    overflow: hidden;
-}
-
 
 .cube {
-    width: var(--box-width);
-    height: var(--box-height);
-    background-color: blue;
+    width: 200px;
+    height: 100px;
+    background: blue;
     border-radius: 20px;
-    animation-name: rotate-animations;
-    animation-duration: 5s;
-    animation-iteration-count: infinite;
+    animation: moveBox 5s infinite alternate;
 }
 
-@keyframes rotate-animations {
+@keyframes moveBox {
+
     0% {
-        margin-top: 0;
-        margin-left: 0;
-
-
+        transform: translate(0, 0) rotate(0deg);
+        background: blue;
     }
+
     25% {
-        margin-top: 0;
-        margin-left: calc(100vw - var(--box-width));
-        background-color: yellow;
-        transform: rotate(180deg);
+        transform: translate(1300px, 0px) rotate(180deg);
+        background: yellow;
+
     }
+
     50% {
-        margin-top: calc(100vh - var(--box-height));
-        margin-left: calc(100vw - var(--box-width));
-        background-color: red;
-        transform: rotate(0deg);
+        transform: translate(1300px, 580px) rotate(0deg);
+        background: red;
     }
+
     75% {
-        margin-left:0;
-        margin-top: calc(100vh - var(--box-height));
-        background-color: orange;
-        transform: rotate(180deg);
+        transform: translate(0px, 580px) rotate(180deg);
+        background: rgb(233, 77, 103);
     }
+
     100% {
-        margin-top: 0;
-        margin-left: 0;
-        background-color: deeppink;
-        transform: rotate(0deg);
+        transform: translate(0, 0) rotate(0deg);
+        background: orange;
     }
 }
